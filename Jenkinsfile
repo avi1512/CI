@@ -8,13 +8,7 @@ node {
     }
 
     stage('Build image') {
-        steps {
-            container('docker') {
-                    sh 'dockerd & > /dev/null'
-                    sleep(time: 10, unit: "SECONDS")
        app = docker.build("avi1512/apppy")
-            }
-        }
     }
 
     stage('Test image') {
